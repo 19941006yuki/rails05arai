@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  get 'topics/new'
   get 'sessions/new'
   get 'pages/help'
   root 'pages#index'
   
   resources :users
+  resources :topics
+  
   
   get    '/login',   to: 'sessions#new' 
   #取得。ログインするページを表示するだけなのでゲット

@@ -8,6 +8,8 @@ Rails はそのクラス名に対応したデータベースのテーブルを�
 対応するデータベースのテーブルを用意しない場合は、self.abstract_class = true を書く必要があります。
 ActiveRecord::Base を継承したクラスを作成し、
 さらにそのクラスを継承させたい場合に self.abstract_class = true を書く。
+self.abstract_class = trueと記載しておかないと
+hoge.base　というテーブルを探してしまう。
 =end
 
 end

@@ -53,8 +53,14 @@ userを削除するが、このままだとcurrentuserにユーザ情報が残�
 nillを代入して、情報を空にする。
 =end
   end
-  def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  def email_params
+    params.require(:session).permit(:email)
   end
+  def password_params
+    params require(:session).permit(:password)
+  end
+=begin 許可していない項目に関しては、変更が許可されない
+ストロングパラメータ
+=end
   
 end
