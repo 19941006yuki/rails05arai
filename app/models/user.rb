@@ -26,4 +26,13 @@ authenticateメソッドが使えるようになる。
 =end
   validate :check_image
   has_many :topics
+  has_many :favorites
+  #複数のモデルが存在するので、複数形で記入
+  has_many :favorite_topics, through: :favorites, source: 'topic'
+  has_many :comments
+  has_many :comments_topics, through: :comments, source: 'topic'
+  #イイね一覧を作成する際、
+  #「ユーザがいいねした投稿一覧を取得する必要がある」
+  #through を使用することで、ユーザがいいねしたTOPIC一覧を取得できる。
+  #
 end

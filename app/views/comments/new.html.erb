@@ -1,0 +1,20 @@
+<div class="users-new-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-4 col-md-4 users-new-container">
+        <h1 class="text-center text-white">コメント</h1>
+          <%= form_for @comment do |f| %>  
+<!-- @はモデルを作成する？　今回はデータベースに保存するわけではないのでモデル作成の必要が無い
+-->
+<!--セッションの場合はリソースの名前とそれに対応するURLを具体的に指定する必要がある。-->
+          <div class="form-group">
+            <%= f.label :description, class: "text-white" %>
+            <%= f.text_field :description, class: "form-control" %>
+ <!--ここのtext_field の後は何が来るのか-->
+          </div>
+          <%= f.submit "投稿する", class: "btn-block btn-white" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

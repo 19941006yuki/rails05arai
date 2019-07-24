@@ -1,13 +1,19 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.all
+    @topics = Topic.all.includes(:favorite_users)
     #form_forの引数にする
+    @comment = Comment.new
+    #なぜ
   end
     
   def new
-    @topic = Topic.new
+    if logged_in?
+      @topic = Topic.new
+    else
+      redirect_to topics_path
+    end
   end
-
+  
   def create
     @topic = current_user.topics.new(topic_params)
 

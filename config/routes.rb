@@ -3,11 +3,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'pages/help'
   root 'pages#index'
-  
-  resources :users
-  resources :topics
-  
-  
+
   get    '/login',   to: 'sessions#new' 
   #取得。ログインするページを表示するだけなのでゲット
   post   '/login',   to: 'sessions#create'
@@ -19,4 +15,15 @@ Rails.application.routes.draw do
 resource :--と指定する事で、index、show、new、edit、create、update、destroyアクションを
 個別に宣言しなくても1行で宣言が完了
 =end
+  resources :users
+  resources :topics
+  resources :comments
+  
+  get 'favorites/index'
+  #なぜtopicsと同じ画面に行くのか
+  post '/favorites', to: 'favorites#create'
+  get 'comments/new', to: 'comments#new'
+  #入力画面はnewで、
+  post '/comments', to: 'comments#create'
+  #なぜget post二つルーティング設定するのか
 end

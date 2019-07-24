@@ -12,6 +12,11 @@ protect_from_forgery(偽装)with: :exception
 =end
   add_flash_types :success, :info, :warning, :danger
   helper_method :current_user, :logged_in?
+#コントローラのメソッドをヘルパーとしてビューに記載
+#コントローラに記載したメソッドを、ビューで使えるようにする。
+#ヘルパーの役割=viewをシンプルにする。Viewとは別の場所（helper）にメソッドを書いておき、
+#Viewから呼び出すことが出来る。
+
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
   end
