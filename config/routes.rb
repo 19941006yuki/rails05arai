@@ -22,6 +22,7 @@ resource :--と指定する事で、index、show、new、edit、create、update�
   get 'favorites/index'
   #なぜtopicsと同じ画面に行くのか
   post '/favorites', to: 'favorites#create'
+  delete 'favorites/delete', to: 'favorites#destroy'
   get 'comments/new', to: 'comments#new'
   #入力画面はnewで、
   post '/comments', to: 'comments#create'

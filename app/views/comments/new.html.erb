@@ -4,6 +4,15 @@
       <div class="col-md-offset-4 col-md-4 users-new-container">
         <h1 class="text-center text-white">コメント</h1>
           <%= form_for @comment do |f| %>  
+          <%= f.hidden_field :user_id, value: @comment.user_id  %>
+          <%= f.hidden_field :topic_id, value: @comment.topic_id %>
+
+
+<!--hidden_field
+descriptionは画面に表示させるが、user_idとtopic_idは非表示なので、
+hiddenfieldにする。hiddenにするなら、field1を作成する意味なくないか-->
+
+          
 <!-- @はモデルを作成する？　今回はデータベースに保存するわけではないのでモデル作成の必要が無い
 -->
 <!--セッションの場合はリソースの名前とそれに対応するURLを具体的に指定する必要がある。-->

@@ -1,8 +1,10 @@
 class TopicsController < ApplicationController
   def index
-    @topics = Topic.all.includes(:favorite_users)
+    @topics = Topic.all.includes(:favorite_users, :comment_users)
+    #all.includesとは
+    #N+１問題を回避するために用いられる
     #form_forの引数にする
-    @comment = Comment.new
+    #@comment = Comment.new
     #なぜ
   end
     
@@ -27,9 +29,10 @@ class TopicsController < ApplicationController
 
   private
   def topic_params
-    params.require(:topic).permit(:image, :description)
+    params.require(:topic).permit(:image,:description)
   end
   #Private以下のメソッドはprivateなメソッドとなり、
   #他のクラスからレシーバ付きで呼び出すことができない。
   #つまり、クラスの中でしか呼び出すことができない。 
+  
 end

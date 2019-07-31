@@ -24,7 +24,7 @@ authenticateメソッドが使えるようになる。
 - 「password」、「password_confirmation」のvalidationの追加（値の空白や不一致のチェック）
 - authoricateメソッドの追加
 =end
-  validate :check_image
+  #validate :check_image
   has_many :topics
   has_many :favorites
   #複数のモデルが存在するので、複数形で記入
