@@ -43,6 +43,7 @@ gem 'bcrypt'
 #has_secure_passwordは内部で暗号化する際にbcryptと言うgemを使用する
 gem "carrierwave"
 #画像機能の作成はGemを使って作りやすくしよう
+gem "aws-sdk-s3", require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
