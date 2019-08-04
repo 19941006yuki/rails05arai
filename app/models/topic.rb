@@ -10,5 +10,5 @@ class Topic < ApplicationRecord
   has_many :comments
   has_many :comment_users, through: :comments, source: 'user'
   #なぜ
-  has_one_attached :image
+  #has_one_attached :image
 end
